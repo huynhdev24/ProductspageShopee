@@ -1,0 +1,555 @@
+/*                         HEADER CSS                       */
+
+.app {
+
+    position: relative;
+}
+.header {
+    background-image: var(--background-image-linear);
+    height: var(--header-height);
+    font-size: 1.4rem;
+    color: var(--white-color);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Header navbar */
+.header__navbar {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+}
+
+
+.navbar__nav {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    height: var(--navbar-height);
+}
+
+.nav-link,
+.nav-item {
+    font-weight: 400;
+    padding: 0px 7px;
+    display: inline-block;  
+    list-style: none;
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.flex {
+    line-height: 34px;
+    display: flex!important;
+    align-items: center;
+}
+
+
+.none-hover {
+    opacity: 1!important;
+}
+.nav-item:hover .nav-link {
+    opacity: 0.7;
+}
+
+.nav-link {
+    padding: 0px;
+}
+
+.nav-item__boundary {
+    border-right: 2px solid hsla(0,0%,100%,.22);
+}
+
+
+
+
+/* Header QR */
+.qr {
+    position: relative;
+}
+
+/* .qr::before {
+    position: absolute;
+    content: "";
+    background-color: red;
+    height: 12px;
+    width: 100%;
+    top: 16px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+} */
+
+.qr:hover .nav-link__qr {
+    display: block;
+}
+
+.qr-container {
+    position: absolute;
+    height: 20px;
+}
+
+.nav-link__qr {
+    background-color: var(--white-color);
+    width: 18.4rem;
+    height: 21.4rem;
+    /* position: absolute; */
+    margin-top: 1rem;
+    /*   */
+    top: 150%;
+    padding: 0px 2px;
+    display: none;
+}
+
+
+
+.nav-link__qr > img {
+    width: 18rem;
+    height: 18rem;
+    text-align: center;
+}
+
+
+
+.download_page {
+    display: flex;
+    /* justify-content: space-around; */
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.app_store, .google_play {
+    height: 1.8rem;
+    width: 7rem;
+}
+
+
+.app_store{
+    margin-right: 8px;
+}
+
+
+
+.nav-link__facebook {
+    font-size: 1.6rem;
+}
+.nav-link__instagram {
+    font-size: 1.6rem;
+}
+
+
+.nav-item + .nav-item__community {
+    padding-left: 0px;
+}
+
+.nav-link__instagram, .nav-link__facebook {
+    margin-right: 1rem;
+}
+
+/*  Notify pop up        */
+.nav-item__notify {
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.nav-item__notify:hover .notify-tooltip{
+    visibility: visible;
+    animation: zooming ease-in 0.2s;
+}
+
+.notify-tooltip {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 402px;
+    height: 352px;
+    color: var(--black-color-rgba);
+    box-shadow: 0 1px 3.125rem 0 rgb(0 0 0 / 20%);
+    border-radius: .125rem;
+    top: 110%;
+    right: 0;
+    transform-origin: calc(100% - 30px) top; 
+}
+
+
+/* add arrow to the tool tip */
+
+.notify-tooltip::after {
+    content: "";
+    position: absolute;
+    right: 36px;
+    bottom: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color:  transparent transparent white transparent;
+}
+
+.notify-tooltip__body {
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notify-content {
+    
+}
+
+.notify-img {
+    width: 100px;
+    height: 100px;
+}
+.notify-tooltip__footer {
+    display: flex;
+    background-color: var(--white-color);
+}
+
+.notify-tooltip__sign-up,
+.notify-tooltip__sign-in {
+    padding: 12px 0px;
+    flex: 1;
+    border: none;
+    background-color: #f5f5f5;
+    color: var(--black-color-rgba);
+}
+
+.notify-tooltip__footer button:hover {
+    background-color: #e8e8e8;
+    cursor: pointer;
+    opacity: 1.3;
+    color: var(--primary-color);
+}
+
+
+
+.nav-item__notify i, .nav-item__help i {
+    font-size: 1.6rem;
+}
+/* end notify popup */
+
+/* Seperate between sign-up and sign-in */
+
+.seperate-boundary {
+    height: 1.6rem;
+    border-right: 2px solid hsla(0,0%,100%,.22);
+}
+
+/* end boundary */
+.nav-item__help {
+    font-size: 1.4rem;
+}
+
+/* Shopee popup overlay */
+
+
+.shopee-modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.5s;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+
+
+.shopee-popup__container {
+    position: relative;
+    margin:auto ;
+    width: 34.8rem;
+    height: 43.6rem;
+    z-index: 9999999999999999999;
+}
+
+.shopee-popup__container .popup_img {
+    width: 100%;
+    height:inherit;
+}
+
+.shopee-popup__close-btn {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    justify-content: center;
+    align-items: center;
+    transform: translate(45%, -45%);
+}
+
+.shopee-popup__close-btn i {
+    flex: 1;
+    font-size: 3rem;
+    color: var(--white-color);
+}
+
+.shopee-popup__close-btn:hover {
+    cursor: pointer;
+}
+
+
+
+/* End shopee popup overlay */
+
+/* Shopee header qith search */
+
+.header-with-search {
+    height: calc(var(--header-height) - var(--navbar-height)); 
+    padding: 16px 0px 10px 0px;
+    display: flex;
+}
+
+
+/* Shopee logo  */
+
+
+.header-with-search__logo-section {
+    padding-right: 40px;
+    flex: 1.5;
+}
+.shopee-logo-icon {
+    width: 162px;
+    height: 50px;
+    fill: #fff;
+}
+
+.shopee-logo__link {
+    display: inline-block;
+}
+
+/* end shopee logo */
+
+.header-with-search__search-section {
+    flex: 6;
+}
+
+.shopee-cart {
+    flex: 1;
+}
+/* Search section */
+.header-with-search__search-section {
+    width: 840px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* search bar */
+.search-bar {
+    padding: 3px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 9%);
+    border-radius: 2px;
+}
+
+.search-bar__input {
+    padding-left: 10px;
+    flex: 1;
+}
+
+.search-bar__input input {
+    width: 100%;
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.search-bar__search-btn {
+    background-color: var(--primary-color);
+    border-radius: 2px;  
+    height: 100%;
+    color: var(--white-color);
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar__search-btn .shopee-search-icon {
+    fill: var(--white-color);
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 100%;
+    margin: 0px 8px;
+}
+
+/* end search bar */
+
+/* Header sub nav */
+.header-sub-navbar {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-navbar-section {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.sub-navbar__item:first-child {
+    margin-left: 0px;
+}
+
+.sub-navbar__item {
+    font-size: 1.2rem;
+    margin-left: 13px;
+    text-decoration: none;
+    color: var(--white-color-hsla);
+}
+
+
+
+/* End header sub nav */
+
+.header-with-search__user-section {
+    flex: 2;
+    display: flex;
+}
+
+
+/* Shopee cart */
+.shopee-cart, .shopee-user {
+    flex: 1;
+    display: flex;
+    margin: 0px 10px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+    position: relative;
+}
+
+.shopee-cart__icon,
+.shopee-cart__icon i,
+.shopee-user__icon,
+.shopee-user__icon i {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+}
+
+
+/* shopee cart notify */
+.shopee-cart__notify {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40rem;
+    background-color: var(--white-color);
+    top: 90%;
+    right: 0;
+    box-shadow: 0 1px 3.125rem 0 rgb(0 0 0 / 20%);
+    border-radius: .125rem;
+    transform-origin: calc(100% - 30px) top; 
+    z-index: 2;
+}
+
+/* add arrow tool tips */
+
+.shopee-cart::after {
+    visibility: hidden;
+    position: absolute;
+    bottom: 10%;
+    right: 42%;
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    
+    border-color: transparent transparent var(--white-color) transparent;
+}
+.shopee-cart:hover:after {
+    visibility: visible;
+    transition: visibility ease-in 0.4s;
+    
+}
+.shopee-cart:hover .shopee-cart__notify {
+    visibility: visible;
+    animation: zooming ease-in 0.1s;
+}
+
+
+
+.notify__container {
+    padding: 60px 0px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.notify-image img {
+    width: 100px;
+    height: 100px;
+}
+
+.notify-content {
+    color: var(--black-color-rgba);
+}
+
+/* end shopee cart */
+
+/*                   Shopee user                  */
+
+.shopee-user {
+    display: none;
+}
+
+.user-menu__overlay.overlay {
+    top: var(--header-height);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overlay, .shopee-user-menu__section {
+    z-index: 0;
+}
+
+.shopee-user-menu__section {
+    right: 0;
+    top: var(--header-height);
+    bottom: 0;
+    background-color: var(--primary-color);
+    width: 240px;
+    position: fixed;
+    transform: translateX(100%) ;
+    transition: transform 1s;
+}
+
+.active {
+    display: block!important;
+    transform: translateX(0);
+}
+
+/* .user-menu__body {
+    margin: 8px 8px;
+    background-color: var(--white-color);
+    min-height: 160px;
+    border-radius: 5px;
+    
+} */
+
+
+
+
+/*                      END HEADER CSS                       */
